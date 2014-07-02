@@ -10,6 +10,7 @@
 
 @interface CFNetworkTestViewController ()
 @property (strong, nonatomic) NSMutableData *responseData;
+@property (strong, nonatomic) NSMutableArray *boolArray;
 @end
 
 @implementation CFNetworkTestViewController
@@ -27,7 +28,7 @@
 {
     [super viewDidLoad];
     // Create the request.
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.62.87:8080/ParkIT-test/rest/ParkITREST/availability"]];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.69.194:8080/ParkIT-test/rest/ParkITREST/availability"]];
     // Setting a timeout
     //request.timeoutInterval = 10.0;
     
@@ -86,6 +87,7 @@
     NSArray *results = [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:nil];
     
     BOOL temp;
+    _boolArray = [[NSMutableArray alloc] init];
     for(int i=0; i<[results count];i++)
     {
         NSNumber *trueFalse = [results objectAtIndex:i];
@@ -93,11 +95,13 @@
         {
             temp = false;
         }
-        if([trueFalse boolValue] == 1)
+        else
         {
             temp = true;
         }
+        [_boolArray addObject:[NSNumber numberWithBool:temp]];
     }
+    [self updateUI];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -116,6 +120,24 @@
         }
     }
     return YES;
+}
+
+- (void)updateUI
+{
+    BOOL temp;
+    for(int i=0; i<[_boolArray count]; i++)
+    {
+        if(i>7)
+        {
+            break;
+        }
+        UIImageView *tempView = (UIImageView *)[self.view viewWithTag:(11+i)];
+        temp = [[_boolArray objectAtIndex:i] boolValue];
+        if(temp)
+        {
+            tempView.image = [UIImage imageNamed:@"car.png"];
+        }
+    }
 }
 
 @end

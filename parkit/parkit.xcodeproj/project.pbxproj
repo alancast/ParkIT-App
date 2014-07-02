@@ -10,6 +10,9 @@
 		099598C2194F94A3005E45AE /* ParkingSpacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 099598C1194F94A3005E45AE /* ParkingSpacesViewController.m */; };
 		099598C5194FD65E005E45AE /* yellowStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 099598C3194FD65E005E45AE /* yellowStar.png */; };
 		099598C6194FD65E005E45AE /* whiteStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 099598C4194FD65E005E45AE /* whiteStar.png */; };
+		09B37DA21964ABFE000E978E /* ParkingLot.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B37DA11964ABFE000E978E /* ParkingLot.png */; };
+		09B37DA41964B083000E978E /* car.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B37DA31964B083000E978E /* car.png */; };
+		09B37DAA1964BDAB000E978E /* Map.png in Resources */ = {isa = PBXBuildFile; fileRef = 09B37DA91964BDAB000E978E /* Map.png */; };
 		09DA79C31953A54E00BC6690 /* CFNetworkTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09DA79C21953A54E00BC6690 /* CFNetworkTestViewController.m */; };
 		09E8B9FE194BAE0D00D66B13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E8B9FD194BAE0D00D66B13 /* Foundation.framework */; };
 		09E8BA00194BAE0D00D66B13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09E8B9FF194BAE0D00D66B13 /* CoreGraphics.framework */; };
@@ -58,6 +61,9 @@
 		099598C1194F94A3005E45AE /* ParkingSpacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingSpacesViewController.m; sourceTree = "<group>"; };
 		099598C3194FD65E005E45AE /* yellowStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowStar.png; sourceTree = "<group>"; };
 		099598C4194FD65E005E45AE /* whiteStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteStar.png; sourceTree = "<group>"; };
+		09B37DA11964ABFE000E978E /* ParkingLot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ParkingLot.png; sourceTree = "<group>"; };
+		09B37DA31964B083000E978E /* car.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = car.png; sourceTree = "<group>"; };
+		09B37DA91964BDAB000E978E /* Map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Map.png; sourceTree = "<group>"; };
 		09DA79C11953A54E00BC6690 /* CFNetworkTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFNetworkTestViewController.h; sourceTree = "<group>"; };
 		09DA79C21953A54E00BC6690 /* CFNetworkTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFNetworkTestViewController.m; sourceTree = "<group>"; };
 		09E8B9FA194BAE0D00D66B13 /* parkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = parkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +181,9 @@
 				09E8BA5A194BB03A00D66B13 /* InfoIcon.png */,
 				099598C3194FD65E005E45AE /* yellowStar.png */,
 				099598C4194FD65E005E45AE /* whiteStar.png */,
+				09B37DA11964ABFE000E978E /* ParkingLot.png */,
+				09B37DA31964B083000E978E /* car.png */,
+				09B37DA91964BDAB000E978E /* Map.png */,
 				09E8BA18194BAE0D00D66B13 /* Images.xcassets */,
 				09E8BA35194BAF0F00D66B13 /* Building Pictures */,
 				09E8BA04194BAE0D00D66B13 /* Supporting Files */,
@@ -312,13 +321,16 @@
 				09E8BA43194BAF0F00D66B13 /* building10.jpg in Resources */,
 				09E8BA5B194BB03A00D66B13 /* InfoIcon.png in Resources */,
 				09E8BA4D194BAF0F00D66B13 /* buildingK.jpg in Resources */,
+				09B37DAA1964BDAB000E978E /* Map.png in Resources */,
 				09E8BA4B194BAF0F00D66B13 /* building9.jpg in Resources */,
 				09E8BA46194BAF0F00D66B13 /* building2.jpg in Resources */,
 				09E8BA49194BAF0F00D66B13 /* building4.jpg in Resources */,
 				09E8BA44194BAF0F00D66B13 /* building11.jpg in Resources */,
 				099598C5194FD65E005E45AE /* yellowStar.png in Resources */,
 				09E8BA4C194BAF0F00D66B13 /* buildingJ.jpg in Resources */,
+				09B37DA41964B083000E978E /* car.png in Resources */,
 				09E8BA4A194BAF0F00D66B13 /* building5.jpg in Resources */,
+				09B37DA21964ABFE000E978E /* ParkingLot.png in Resources */,
 				09E8BA11194BAE0D00D66B13 /* Main.storyboard in Resources */,
 				09E8BA48194BAF0F00D66B13 /* building3.jpg in Resources */,
 				099598C6194FD65E005E45AE /* whiteStar.png in Resources */,
