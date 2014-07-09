@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		096A7814196DF1040020735E /* parkIT_logo_Alex_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A7813196DF1040020735E /* parkIT_logo_Alex_Final.png */; };
+		096A7816196DF1430020735E /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A7815196DF1430020735E /* logo2.png */; };
 		099598C2194F94A3005E45AE /* ParkingSpacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 099598C1194F94A3005E45AE /* ParkingSpacesViewController.m */; };
 		099598C5194FD65E005E45AE /* yellowStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 099598C3194FD65E005E45AE /* yellowStar.png */; };
 		099598C6194FD65E005E45AE /* whiteStar.png in Resources */ = {isa = PBXBuildFile; fileRef = 099598C4194FD65E005E45AE /* whiteStar.png */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		096A7813196DF1040020735E /* parkIT_logo_Alex_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkIT_logo_Alex_Final.png; sourceTree = "<group>"; };
+		096A7815196DF1430020735E /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		099598C0194F94A3005E45AE /* ParkingSpacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingSpacesViewController.h; sourceTree = "<group>"; };
 		099598C1194F94A3005E45AE /* ParkingSpacesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingSpacesViewController.m; sourceTree = "<group>"; };
 		099598C3194FD65E005E45AE /* yellowStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowStar.png; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				09B37DA11964ABFE000E978E /* ParkingLot.png */,
 				09B37DA31964B083000E978E /* car.png */,
 				09B37DA91964BDAB000E978E /* Map.png */,
+				096A7815196DF1430020735E /* logo2.png */,
+				096A7813196DF1040020735E /* parkIT_logo_Alex_Final.png */,
 				09E8BA18194BAE0D00D66B13 /* Images.xcassets */,
 				09E8BA35194BAF0F00D66B13 /* Building Pictures */,
 				09E8BA04194BAE0D00D66B13 /* Supporting Files */,
@@ -317,7 +323,9 @@
 			files = (
 				09E8BA45194BAF0F00D66B13 /* building12.jpg in Resources */,
 				09E8BA19194BAE0D00D66B13 /* Images.xcassets in Resources */,
+				096A7814196DF1040020735E /* parkIT_logo_Alex_Final.png in Resources */,
 				09E8BA08194BAE0D00D66B13 /* InfoPlist.strings in Resources */,
+				096A7816196DF1430020735E /* logo2.png in Resources */,
 				09E8BA43194BAF0F00D66B13 /* building10.jpg in Resources */,
 				09E8BA5B194BB03A00D66B13 /* InfoIcon.png in Resources */,
 				09E8BA4D194BAF0F00D66B13 /* buildingK.jpg in Resources */,

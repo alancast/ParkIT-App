@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Create the request.
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.69.194:8080/ParkIT-test/rest/ParkITREST/availability"]];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.69.185:8080/ParkIT-test/rest/ParkITREST/availability"]];
     // Setting a timeout
     //request.timeoutInterval = 10.0;
     
@@ -137,7 +137,19 @@
         {
             tempView.image = [UIImage imageNamed:@"car.png"];
         }
+        else
+        {
+            tempView.image = nil;
+        }
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.69.185:8080/ParkIT-test/rest/ParkITREST/availability"]];
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [self updateUI];
 }
 
 @end
