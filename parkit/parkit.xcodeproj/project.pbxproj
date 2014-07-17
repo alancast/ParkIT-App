@@ -108,6 +108,7 @@
 		09E8BA54194BAF9300D66B13 /* ParkingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingViewController.h; sourceTree = "<group>"; };
 		09E8BA55194BAF9300D66B13 /* ParkingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingViewController.m; sourceTree = "<group>"; };
 		09E8BA5A194BB03A00D66B13 /* InfoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InfoIcon.png; sourceTree = "<group>"; };
+		09EC53B019788CE200D45806 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +157,7 @@
 		09E8B9FC194BAE0D00D66B13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09EC53B019788CE200D45806 /* Security.framework */,
 				09E8B9FD194BAE0D00D66B13 /* Foundation.framework */,
 				09E8B9FF194BAE0D00D66B13 /* CoreGraphics.framework */,
 				09E8BA01194BAE0D00D66B13 /* UIKit.framework */,

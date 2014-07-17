@@ -33,6 +33,8 @@
     //request.timeoutInterval = 10.0;
     
     // Create url connection and fire request
+    NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
+    self.usernameLabel.text = username;
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 

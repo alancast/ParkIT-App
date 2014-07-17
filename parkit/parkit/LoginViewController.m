@@ -49,6 +49,8 @@
 
 - (IBAction)loginClick:(id)sender
 {
+    [[NSUserDefaults standardUserDefaults] setObject:_username.text    forKey:@"username"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     [appDelegate.window setRootViewController:appDelegate.tabBarController];
 }

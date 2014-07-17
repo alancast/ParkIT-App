@@ -11,5 +11,6 @@
 @interface CFNetworkTestViewController : UIViewController<NSURLConnectionDataDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *sourceCodeView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @end
