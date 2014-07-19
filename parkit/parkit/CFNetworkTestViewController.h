@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *sourceCodeView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *forTessie;
+- (IBAction)CheckIn:(id)sender;
 
 @end
