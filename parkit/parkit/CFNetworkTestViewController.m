@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     // Create the request.
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.62.106:8080/ParkIT-test/rest/ParkITREST/availability"]];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://asf-parkit.cisco.com:8080/ParkIT-test/rest/ParkITREST/availability"]];
     // Setting a timeout
     //request.timeoutInterval = 10.0;
     
@@ -36,6 +36,8 @@
     NSString *username = [[NSUserDefaults standardUserDefaults] stringForKey:@"username"];
     self.usernameLabel.text = username;
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    self.checkInButton.layer.cornerRadius = 5;
+    self.checkInBackground.layer.cornerRadius = 5;
 }
 
 - (void)didReceiveMemoryWarning
@@ -149,13 +151,17 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://10.155.62.106:8080/ParkIT-test/rest/ParkITREST/availability"]];
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://asf-parkit.cisco.com:8080/ParkIT-test/rest/ParkITREST/availability"]];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [self updateUI];
 }
 
 - (IBAction)CheckIn:(id)sender
 {
-    self.forTessie.text = @"Hey Tessie";
+    [self.checkInButton setEnabled:NO];
+    [self.checkInButton setTitle:@"Checked In" forState:UIControlStateDisabled];
+    self.checkInButton.layer.cornerRadius = 5;
+    self.checkInButton.alpha = .5;
+    self.checkInBackground.alpha = 0;
 }
 @end

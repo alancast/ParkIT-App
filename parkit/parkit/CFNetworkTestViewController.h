@@ -12,7 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *sourceCodeView;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *forTessie;
+@property (weak, nonatomic) IBOutlet UIButton *checkInButton;
 - (IBAction)CheckIn:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *checkInBackground;
+
 
 @end
