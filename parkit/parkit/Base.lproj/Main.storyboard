@@ -359,7 +359,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhk-B3-nxT" userLabel="Button - Check In Behind">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xhk-B3-nxT" userLabel="Button - Check In Behind">
                                 <rect key="frame" x="47" y="48" width="225" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -371,20 +371,17 @@
                                     <action selector="CheckIn:" destination="MCc-kD-Sud" eventType="touchUpInside" id="flO-po-gLI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foH-Nk-p44">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1Q-gK-hB1" userLabel="Button - Check In Behind">
                                 <rect key="frame" x="47" y="48" width="225" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Check In">
                                     <color key="titleColor" red="0.21537449049999999" green="0.21537449049999999" blue="0.21537449049999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <state key="selected" title="Check In">
-                                    <color key="titleColor" red="0.21537449049999999" green="0.21537449049999999" blue="0.21537449049999999" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted" title="Check In"/>
                                 <connections>
-                                    <action selector="CheckIn:" destination="MCc-kD-Sud" eventType="touchUpInside" id="hME-5p-4kB"/>
+                                    <action selector="CheckIn:" destination="MCc-kD-Sud" eventType="touchUpInside" id="eCz-1x-VIj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -393,7 +390,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="Map.png" id="T6o-Hx-aS9"/>
                     <connections>
                         <outlet property="checkInBackground" destination="Xhk-B3-nxT" id="lfT-nw-cBz"/>
-                        <outlet property="checkInButton" destination="foH-Nk-p44" id="ThQ-pU-Xja"/>
+                        <outlet property="checkInButton" destination="R1Q-gK-hB1" id="6g4-sZ-JbF"/>
                         <outlet property="sourceCodeView" destination="kQV-UZ-Uua" id="pbr-l8-rbY"/>
                         <outlet property="usernameLabel" destination="TVe-zm-2uV" id="ayr-d8-rXd"/>
                     </connections>

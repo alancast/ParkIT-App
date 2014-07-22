@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094C4133197ECC0D00262503 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 094C4132197ECC0D00262503 /* check.png */; };
 		096A7814196DF1040020735E /* parkIT_logo_Alex_Final.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A7813196DF1040020735E /* parkIT_logo_Alex_Final.png */; };
 		096A7816196DF1430020735E /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 096A7815196DF1430020735E /* logo2.png */; };
 		099598C2194F94A3005E45AE /* ParkingSpacesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 099598C1194F94A3005E45AE /* ParkingSpacesViewController.m */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		094C4132197ECC0D00262503 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		096A7813196DF1040020735E /* parkIT_logo_Alex_Final.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parkIT_logo_Alex_Final.png; sourceTree = "<group>"; };
 		096A7815196DF1430020735E /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
 		099598C0194F94A3005E45AE /* ParkingSpacesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingSpacesViewController.h; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				099598C4194FD65E005E45AE /* whiteStar.png */,
 				09B37DA11964ABFE000E978E /* ParkingLot.png */,
 				09B37DA31964B083000E978E /* car.png */,
+				094C4132197ECC0D00262503 /* check.png */,
 				09B37DA91964BDAB000E978E /* Map.png */,
 				096A7815196DF1430020735E /* logo2.png */,
 				096A7813196DF1040020735E /* parkIT_logo_Alex_Final.png */,
@@ -341,6 +344,7 @@
 				09B37DA41964B083000E978E /* car.png in Resources */,
 				09E8BA4A194BAF0F00D66B13 /* building5.jpg in Resources */,
 				09B37DA21964ABFE000E978E /* ParkingLot.png in Resources */,
+				094C4133197ECC0D00262503 /* check.png in Resources */,
 				09E8BA11194BAE0D00D66B13 /* Main.storyboard in Resources */,
 				09E8BA48194BAF0F00D66B13 /* building3.jpg in Resources */,
 				099598C6194FD65E005E45AE /* whiteStar.png in Resources */,

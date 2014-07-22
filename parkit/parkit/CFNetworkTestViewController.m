@@ -11,6 +11,7 @@
 @interface CFNetworkTestViewController ()
 @property (strong, nonatomic) NSMutableData *responseData;
 @property (strong, nonatomic) NSMutableArray *boolArray;
+@property int whichURL; //1 if for map, 2 if for check in
 @end
 
 @implementation CFNetworkTestViewController
@@ -27,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.whichURL = 1;
     // Create the request.
     NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://asf-parkit.cisco.com:8080/ParkIT-test/rest/ParkITREST/availability"]];
     // Setting a timeout
@@ -64,12 +66,20 @@
     // so that we can append data to it in the didReceiveData method
     // Furthermore, this method is called each time there is a redirect so reinitializing it
     // also serves to clear it
-    _responseData = [[NSMutableData alloc] init];
+    if(self.whichURL ==1)
+    {
+        _responseData = [[NSMutableData alloc] init];
+        NSLog(@"receieved one");
+    }
+    NSLog(@"receieved two");
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
-    [_responseData appendData:data];
+    if(self.whichURL == 1)
+    {
+        [_responseData appendData:data];
+    }
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
@@ -82,30 +92,33 @@
 {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
-    _sourceCodeView.text = [[NSString alloc]initWithData:_responseData encoding:NSASCIIStringEncoding];
-    
-    // convert to JSON
-    NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:nil];
-    
-    // extract specific value...
-    NSArray *results = [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:nil];
-    
-    BOOL temp;
-    _boolArray = [[NSMutableArray alloc] init];
-    for(int i=0; i<[results count];i++)
+    if(self.whichURL == 1)
     {
-        NSNumber *trueFalse = [results objectAtIndex:i];
-        if([trueFalse boolValue] == 0)
+        _sourceCodeView.text = [[NSString alloc]initWithData:_responseData encoding:NSASCIIStringEncoding];
+        
+        // convert to JSON
+        NSDictionary *res = [NSJSONSerialization JSONObjectWithData:self.responseData options:NSJSONReadingMutableLeaves error:nil];
+        
+        // extract specific value...
+        NSArray *results = [NSJSONSerialization JSONObjectWithData:self.responseData options:0 error:nil];
+        
+        BOOL temp;
+        _boolArray = [[NSMutableArray alloc] init];
+        for(int i=0; i<[results count];i++)
         {
-            temp = false;
+            NSNumber *trueFalse = [results objectAtIndex:i];
+            if([trueFalse boolValue] == 0)
+            {
+                temp = false;
+            }
+            else
+            {
+                temp = true;
+            }
+            [_boolArray addObject:[NSNumber numberWithBool:temp]];
         }
-        else
-        {
-            temp = true;
-        }
-        [_boolArray addObject:[NSNumber numberWithBool:temp]];
+        [self updateUI];
     }
-    [self updateUI];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -150,6 +163,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    self.whichURL = 1;
     [super viewWillAppear:animated];
     NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://asf-parkit.cisco.com:8080/ParkIT-test/rest/ParkITREST/availability"]];
     NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -158,10 +172,54 @@
 
 - (IBAction)CheckIn:(id)sender
 {
-    [self.checkInButton setEnabled:NO];
-    [self.checkInButton setTitle:@"Checked In" forState:UIControlStateDisabled];
-    self.checkInButton.layer.cornerRadius = 5;
-    self.checkInButton.alpha = .5;
-    self.checkInBackground.alpha = 0;
+    self.checkInButton.selected = !self.checkInButton.selected;
+    //[self.checkInButton setEnabled:NO];
+    //[self.checkInButton setTitle:@"Checked In" forState:UIControlStateDisabled];
+    //[self.checkInButton setTitle:@"" forState:UIControlStateDisabled];
+    [self.checkInButton setTitle:@"" forState:UIControlStateSelected];
+    [self.checkInButton setTitle:@"Check In" forState:UIControlStateNormal];
+    if(self.checkInButton.selected)
+    {
+        self.checkInButton.alpha = .5;
+        self.checkInBackground.alpha = 0;
+        UIImageView *checkView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"check.png"]];
+        checkView.alpha = 0.2;
+        checkView.contentMode = UIViewContentModeScaleAspectFit;
+        checkView.frame = CGRectMake(0.0, 0.0, self.checkInButton.frame.size.width, self.checkInButton.frame.size.height);
+        checkView.tag = 1;
+        [self.checkInButton addSubview:checkView];
+    }
+    if(!self.checkInButton.selected)
+    {
+        self.checkInButton.alpha = 1;
+        self.checkInBackground.alpha = 1;
+        for (UIView *subView in self.checkInButton.subviews)
+        {
+            if (subView.tag == 1)
+            {
+                [subView removeFromSuperview];
+            }
+        }
+    }
+    self.whichURL = 2;
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"], @"username", nil];
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:nil];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://asf-parkit.cisco.com:8080/ParkIT-test/rest/ParkITREST/availability"]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPBody:jsonData];
+    
+    // print json:
+    NSLog(@"JSON summary: %@", [[NSString alloc] initWithData:jsonData
+                                                     encoding:NSUTF8StringEncoding]);
+    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [conn start];
+    if(conn) {
+        NSLog(@"Connection Successful");
+    } else {
+        NSLog(@"Connection could not be made");
+    }
 }
 @end
