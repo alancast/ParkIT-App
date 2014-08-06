@@ -45,6 +45,8 @@
     [self.peripheralManager startAdvertising:advertisingData];
     */
     
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
     return YES;
 }
 
@@ -114,6 +116,15 @@
 -(void)noAdvertising
 {
     [self.peripheralManager stopAdvertising];
+}
+
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *token = [[deviceToken description] stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"content---%@", token);
+    [[NSUserDefaults standardUserDefaults] setObject:token    forKey:@"deviceToken"];
+    [[NSUserDefaults standardUserDefaults] synchronize];    
 }
 
 @end

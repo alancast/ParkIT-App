@@ -202,7 +202,7 @@
         }
     }
     self.whichURL = 2;
-    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"], @"username", nil];
+    NSDictionary *newDatasetInfo = [NSDictionary dictionaryWithObjectsAndKeys:[[NSUserDefaults standardUserDefaults] stringForKey:@"username"], @"username", [[NSUserDefaults standardUserDefaults] stringForKey:@"deviceToken"], @"deviceToken", nil];
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:newDatasetInfo options:kNilOptions error:nil];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
     [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://asf-parkit.cisco.com:8080/ParkIT-test/rest/ParkITREST/availability"]]];
@@ -221,5 +221,8 @@
     } else {
         NSLog(@"Connection could not be made");
     }
+    //self.usernameLabel.text = [[NSUserDefaults standardUserDefaults] stringForKey:@"deviceToken"];
+    self.usernameLabel.text = [NSString stringWithFormat:@"JSON summary: %@", [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding]];
 }
+ 
 @end
